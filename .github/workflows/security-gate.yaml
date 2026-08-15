@@ -1,9 +1,9 @@
 name: Mini ASPM Security Gate
 
 on:
-  pull_request:
   push:
-  workflow_dispatch:
+    branches:
+      - master
 
 permissions:
   contents: read
