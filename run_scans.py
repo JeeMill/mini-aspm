@@ -78,17 +78,26 @@ def run_all_scans():
         ),
         (
             "Checkov",
-            [
-                "cmd",
-                "/c",
-                "checkov",
-                "-d",
-                "infrastructure",
-                "-o",
-                "json",
-                "--output-file-path",
-                "scans/checkov"
-            ],
+            if os.name == "nt":
+                checkov_command = [
+                    "cmd",
+                    "/c",
+                    "checkov",
+                    "-d",
+                    "infrastructure",
+                    "-o",
+                    "json",
+                    "--output-file-path",
+                    "scans/checkov"
+                ]
+            else:
+                checkov_command = [
+                    "checkov",
+                    "-d",
+                    "infrastructure",
+                    "-o",
+                    "json"
+                ],
             
         )
     ]
