@@ -1,0 +1,22 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 39,
+  "EndLine": 39,
+  "StartColumn": 10,
+  "EndColumn": 41,
+  "Match": "RegEnumKey = win32api.RegEnumKey",
+  "Secret": "win32api.RegEnumKey",
+  "File": ".venv/Lib/site-packages/setuptools/_distutils/msvccompiler.py",
+  "SymlinkFile": "",
+  "Commit": "08301a23a3479c31b4f482aaa59cd64b861790e7",
+  "Entropy": 3.932138,
+  "Author": "Jerler",
+  "Email": "jeremybertmi@gmail.com",
+  "Date": "2026-08-14T00:15:54Z",
+  "Message": "Initial mini ASPM application",
+  "Tags": [],
+  "Fingerprint": "08301a23a3479c31b4f482aaa59cd64b861790e7:.venv/Lib/site-packages/setuptools/_distutils/msvccompiler.py:generic-api-key:39"
+ }
+]
