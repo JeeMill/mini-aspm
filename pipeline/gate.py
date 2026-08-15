@@ -63,10 +63,13 @@ def main():
         for finding in blocking_findings:
             print_finding(finding)
 
+        print(f'\n{len(blocking_findings)} findings violate security policy')
+
         sys.exit(1)
 
     print("\n[PASS] Security gate passed.")
     sys.exit(0)
+
 
 if __name__ == "__main__":
     main()
