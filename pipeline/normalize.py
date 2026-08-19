@@ -11,7 +11,7 @@ from pipeline.parsers import (
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-SCAN_DIR = ROOT_DIR / "scans" / "normalized"
+SCAN_DIR = ROOT_DIR / "scans" 
 
 OUTPUT_FILE = SCAN_DIR / "normalized_findings.json"
 
