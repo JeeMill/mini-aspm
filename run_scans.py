@@ -36,6 +36,20 @@ def run_scan(name, command):
         return -1
 
 def run_all_scans():
+
+    checkov_command = [
+        "checkov",
+        "-d",
+        "infrastructure",
+        "-o",
+        "json",
+        "--output-file-path",
+        "scans/checkov"
+    ]
+
+    if os.name == "nt":
+        checkov_command = ["cmd", "/c", *checkov_command]
+
     scans = [
         (
             "Gitleaks",
@@ -78,26 +92,7 @@ def run_all_scans():
         ),
         (
             "Checkov",
-            if os.name == "nt":
-                checkov_command = [
-                    "cmd",
-                    "/c",
-                    "checkov",
-                    "-d",
-                    "infrastructure",
-                    "-o",
-                    "json",
-                    "--output-file-path",
-                    "scans/checkov"
-                ]
-            else:
-                checkov_command = [
-                    "checkov",
-                    "-d",
-                    "infrastructure",
-                    "-o",
-                    "json"
-                ],
+            checkov_command
             
         )
     ]
