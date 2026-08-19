@@ -27,7 +27,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v7
         with:
-          go-version: "1.26.2"
+          go-version: "1.26.4"
           cache: false
 
       - name: Install Python dependencies and scanners
@@ -40,9 +40,9 @@ jobs:
 
           pip install semgrep checkov
 
-      - name: Install OSV-Scanner and Gitleaks
+      - name: Install OSV-Scanner
         run: |
-          go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest
+          go install github.com/google/osv-scanner/v2/cmd/osv-scanner@v2.4.0
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
       - name: Install Gitleaks
